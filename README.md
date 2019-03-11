@@ -1,6 +1,5 @@
 # Rally
 > Meet your match.
-Try it out: http://bit.ly/rally-app
 
 ## Team
 
@@ -19,8 +18,8 @@ Try it out: http://bit.ly/rally-app
 1. [Contributing](#contributing)
 
 ## Usage
-
-- Explore the app demo by clicking 'Login as Guest'
+- Try it out here: http://bit.ly/rally-app
+- Explore the app demo by logging in with a Google account or clicking 'Login as Guest'
 
 ### Installing Dependencies
 
