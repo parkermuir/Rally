@@ -1,7 +1,6 @@
 import React from 'react';
 import { Navbar, Nav, NavItem, Image } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
-import { Link } from 'react-router-dom';
 
 import GoogleIcon from '../../dist/lib/googleIcon.png';
 

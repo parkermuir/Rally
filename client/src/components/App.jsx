@@ -54,7 +54,7 @@ class App extends React.Component {
       loading: true
     });
 
-    var provider = new firebase.auth.GoogleAuthProvider();
+    let provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithRedirect( provider )
       .then( () => {
         return;
@@ -83,7 +83,7 @@ class App extends React.Component {
         email: 'guest@guest.com',
         displayName: 'Jane Doe'
       }
-    })
+    });
   }
 
   /* --- UPDATING USER INFO FROM DB --- */

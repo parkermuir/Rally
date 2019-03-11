@@ -25,13 +25,9 @@ class Matchmaking extends React.Component {
 
   handleSelect ( tabId ) {
     if ( tabId === 'one' ) {
-      this.setState({
-        showChallenges: false
-      });
+      this.setState({ showChallenges: false });
     } else {
-      this.setState({
-        showChallenges: true
-      });
+      this.setState({ showChallenges: true });
     }
   }
 

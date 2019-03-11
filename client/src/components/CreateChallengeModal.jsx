@@ -32,7 +32,6 @@ const CreateChallengeModal = (props) => {
           <ControlLabel>Select Date and Time</ControlLabel>
           <Datetime
             isValidDate={ valid }
-            // className="form-width"
             closeOnSelect={ false }
             inputProps={{
               placeholder: 'Select Date',
@@ -72,7 +71,7 @@ const CreateChallengeModal = (props) => {
           Cancel
         </Button>
         <Button
-        className="rec-card-button"
+          className="rec-card-button"
           bsStyle="primary"
           onClick={ props.createMatch }
           disabled={ !(props.startTime && props.location) }

@@ -41,8 +41,8 @@ class EditUserInfo extends React.Component {
   }
 
   isValidPhoneNumber ( number ) {
-    var phoneRe = /^[2-9]\d{2}[2-9]\d{2}\d{4}$/;
-    var digits = number.replace(/\D/g, '');
+    let phoneRe = /^[2-9]\d{2}[2-9]\d{2}\d{4}$/;
+    let digits = number.replace(/\D/g, '');
     if ( phoneRe.test( digits ) && number[3] === '-' && number[7] === '-') {
       this.setState({
         validNumber: true

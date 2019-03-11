@@ -37,13 +37,9 @@ class MatchesView extends React.Component {
 
   handleTabSelect ( tabId ) {
     if ( tabId === 'one' ) {
-      this.setState({
-        showCalendar: false
-      });
+      this.setState({ showCalendar: false });
     } else {
-      this.setState({
-        showCalendar: true
-      });
+      this.setState({ showCalendar: true });
     }
   }
 
@@ -52,7 +48,7 @@ class MatchesView extends React.Component {
       <div className="matches-container">
         <Tabs
           defaultTab="one"
-          onChange={(tabId) => { this.handleTabSelect( tabId ); }}
+          onChange={( tabId ) => { this.handleTabSelect( tabId ); }}
         >
           <TabList>
             <Tab tabFor="one">Matches</Tab>

@@ -64,7 +64,7 @@ class SearchUsers extends React.Component {
 
   render () {
 
-    const { value, suggestions } = this.state;
+    const { value } = this.state;
     const inputProps = {
       placeholder: 'Search for players...',
       value,

@@ -12,10 +12,11 @@ const Calendar = (props) => {
     let endDate = new Date( match.startTime );
     endDate.setHours( endDate.getHours() + 3 );
 
+    let matchOpponent;
     if (props.currentUser === match.opponent) {
-      var matchOpponent = match.challengerUserInfo;
+      matchOpponent = match.challengerUserInfo;
     } else {
-      var matchOpponent = match.opponentUserInfo;
+      matchOpponent = match.opponentUserInfo;
     }
 
     return {

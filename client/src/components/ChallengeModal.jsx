@@ -7,11 +7,12 @@ import moment from 'moment';
 import Map from './Map.jsx';
 
 const ChallengeModal = (props) => {
+  let matchOpponent;
   if (props.challenge) {
     if (props.currentUser === props.challenge.challenger) {
-      var matchOpponent = props.challenge.opponentUserInfo;
+      matchOpponent = props.challenge.opponentUserInfo;
     } else {
-      var matchOpponent = props.challenge.challengerUserInfo;
+      matchOpponent = props.challenge.challengerUserInfo;
     } 
 
     return (

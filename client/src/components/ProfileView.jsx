@@ -80,7 +80,7 @@ class ProfileView extends React.Component {
         //    width: 39 // for adjusting arc thickness
       },
       color: {
-        pattern: ['#FF0000', '#F97600', '#F6C600', '#60B044'], // the three color levels for the percentage values.
+        pattern: ['#FF0000', '#F97600', '#F6C600', '#60B044'],
         threshold: {
           //            unit: 'value', // percentage is default
           //            max: 200, // 100 is default
@@ -228,10 +228,6 @@ class ProfileView extends React.Component {
                   <div id="win-loss"></div>
                   <h4>{'Wins: ' + this.props.playerData.wins + ' Losses: ' + this.props.playerData.losses}</h4>
                 </Col>
-                {/* <Col xs={12} md={4}>
-
-                  <code>{'Trophieees'}</code>
-                </Col> */}
               </Row>
             </Grid>
           }
