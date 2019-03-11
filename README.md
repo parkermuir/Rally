@@ -1,6 +1,6 @@
 # Rally
 > Meet your match.
-Try it out here: http://bit.ly/rally-app
+Try it out: http://bit.ly/rally-app
 
 ## Team
 
