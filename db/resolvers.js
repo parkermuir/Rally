@@ -7,46 +7,66 @@ const resolvers = {
 
     /*--- USER TYPE RESOLVERS ---*/
     completedMatches: async ({ email }) => {
-      return await models.Match.findAll({
-        where: {
-          [Op.or]: [
-            { challenger: email },
-            { opponent: email }
-          ],
-          completed: true
-        }
-      });
+      try {
+        return await models.Match.findAll({
+          where: {
+            [Op.or]: [
+              { challenger: email },
+              { opponent: email }
+            ],
+            completed: true
+          }
+        });
+      } catch ( error ) {
+        console.error( error );
+        return false;
+      }
     },
 
     pendingMatches: async ({ email }) => {
-      return await models.Match.findAll({
-        where: {
-          [Op.or]: [
-            { challenger: email },
-            { opponent: email }
-          ],
-          completed: false,
-          accepted: true
-        }
-      });
+      try {
+        return await models.Match.findAll({
+          where: {
+            [Op.or]: [
+              { challenger: email },
+              { opponent: email }
+            ],
+            completed: false,
+            accepted: true
+          }
+        });
+      } catch ( error ) {
+        console.error( error );
+        return false;
+      }
     },
 
     challengesSent: async ({ email }) => {
-      return await models.Match.findAll({
-        where: {
-          challenger: email,
-          accepted: false
-        }
-      });
+      try {
+        return await models.Match.findAll({
+          where: {
+            challenger: email,
+            accepted: false
+          }
+        });
+      } catch ( error ) {
+        console.error( error );
+        return false;
+      }
     },
 
     challengesReceived: async ({ email }) => {
-      return await models.Match.findAll({
-        where: {
-          opponent: email,
-          accepted: false
-        }
-      });
+      try {
+        return await models.Match.findAll({
+          where: {
+            opponent: email,
+            accepted: false
+          }
+        });
+      } catch ( error ) {
+        console.error( error );
+        return false;
+      }
     }
   },
 
@@ -54,15 +74,30 @@ const resolvers = {
 
     /*--- MATCH TYPE RESOLVERS ---*/
     court: async ({ location }) => {
-      return await models.Court.findOne({ where: { name: location }});
+      try {
+        return await models.Court.findOne({ where: { name: location }});
+      } catch ( error ) {
+        console.error( error );
+        return false;
+      }
     },
 
     challengerUserInfo: async({ challenger }) => {
-      return await models.User.findOne({ where: { email: challenger }});
+      try {
+        return await models.User.findOne({ where: { email: challenger }});
+      } catch ( error ) {
+        console.error( error );
+        return false;
+      }
     },
 
     opponentUserInfo: async({ opponent }) => {
-      return await models.User.findOne({ where: { email: opponent }});
+      try {
+        return await models.User.findOne({ where: { email: opponent } });
+      } catch ( error ) {
+        console.error( error );
+        return false;
+      }
     }
 
   },
@@ -80,26 +115,46 @@ const resolvers = {
     },
 
     getAllUsers: async ( ) => {
-      return await models.User.findAll({});
+      try {
+        return await models.User.findAll({});
+      } catch ( error ) {
+        console.error( error );
+        return false;
+      }
     },
 
     getUsersByTier: async ( _, { tier, email } ) => {
-      return await models.User.findAll({
-        where: {
-          tier,
-          [Op.not]: {
-            email
+      try {
+        return await models.User.findAll({
+          where: {
+            tier,
+            [Op.not]: {
+              email
+            }
           }
-        }
-      });
+        });
+      } catch ( error ) {
+        console.error( error );
+        return false;
+      }
     },
 
     getUserByEmail: async( _, { email } ) => {
-      return await models.User.findOne({ where: { email }});
+      try {
+        return await models.User.findOne({ where: { email }});
+      } catch ( error ) {
+        console.error( error );
+        return false;
+      }
     },
     
     getAllCourts: async ( ) => {
-      return await models.Court.findAll({});
+      try {
+        return await models.Court.findAll({});
+      } catch ( error ) {
+        console.error( error );
+        return false;
+      }
     }
 
   },
@@ -156,9 +211,15 @@ const resolvers = {
     },
 
     deleteMatch: async ( _, { id } ) => {
-      return await models.Match.destroy({
-        where: { id } 
-      });
+      try {
+        return await models.Match.destroy({
+          where: { id }
+        });
+      } catch (error) {
+        console.error(error);
+        return false;
+      }
+
     },
 
     /*--- COURT MUTATIONS ---*/
