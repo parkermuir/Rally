@@ -1,5 +1,6 @@
 # Rally
 > Meet your match.
+Try it out here: http://bit.ly/rally-app
 
 ## Team
 
@@ -35,4 +36,4 @@ View the project roadmap [here](https://github.com/TeamGaiman/thesis/issues)
 
 ## Contributing
 
-See [CONTRIBUTING.md](_CONTRIBUTING.md) for contribution guidelines.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
